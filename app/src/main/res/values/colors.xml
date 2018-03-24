@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4a72b2</color>
+    <color name="colorPrimaryDark">#101140</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="blanco">#ffffff</color>
+    <color name="trn_azul">#101140</color>
+    <color name="eliminar">#ff0000</color>
+    <color name="editar">#F4A900</color>
+</resources>
