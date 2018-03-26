@@ -3,6 +3,7 @@ package pe.com.transaltisa.reportedefallas.Activities;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,6 +12,7 @@ import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -21,6 +23,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -46,15 +51,14 @@ public class MainActivity extends AppCompatActivity
     private List<MFalla> listFallas;
     private ArrayList<String> mlistTitlesFallas;
     private MyCustomAdapter adapter;
+    private MFalla delRepFalla;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("LISTVIEW3", "LLEGO LIST VIEW3");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Log.d("LISTVIEW2", "LLEGO LIST VIEW2");
         mDbHelper = new FallasDBHelper(this);
         session = new SessionManager(getApplicationContext());
         mListView = (ListView) findViewById(R.id.lvReporteFallas);
@@ -67,8 +71,8 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent i = new Intent(MainActivity.this, NuevoReporte.class);
+                MainActivity.this.startActivity(i);
             }
         });
 
@@ -81,6 +85,15 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
+    @Override
+    protected void onRestart() {
+// TODO Auto-generated method stub
+        super.onRestart();
+        resfreshNotes();
+        //Do your code here
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -144,7 +157,7 @@ public class MainActivity extends AppCompatActivity
             TextView textView = new TextView(this);
             textView.setTextSize(24);
             textView.setGravity(Gravity.CENTER_HORIZONTAL);
-            textView.setText("Reportes de Fallas");
+            textView.setText("Listado de Reportes");
             textView.setTypeface(Typeface.DEFAULT_BOLD);
             // Definimos un array con los valores de los titulos de las notas
             // que presentaremos en el ListView
@@ -196,11 +209,12 @@ public class MainActivity extends AppCompatActivity
     public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
         private ArrayList<String> list = new ArrayList<String>();
         private Context context;
-
-
+        private  AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
+        final Animation myAnim;
         public MyCustomAdapter(ArrayList<String> list, Context context) {
             this.list = list;
             this.context = context;
+            myAnim = AnimationUtils.loadAnimation(this.context, R.anim.bounce_buttons);
         }
 
         @Override
@@ -239,47 +253,71 @@ public class MainActivity extends AppCompatActivity
             TextView listItemText = (TextView) view.findViewById(R.id.list_item_string);
             listItemText.setText(list.get(position));
 
-            ImageButton editBtn = (ImageButton) view.findViewById(R.id.edit_btn);
-            //Handle buttons and add onClickListeners
-            ImageButton deleteBtn = (ImageButton) view.findViewById(R.id.delete_btn);
-            //ImageButton imgButtonCloud = (ImageButton) view.findViewById(R.id.add_btn);
-            Button addBtn = (Button) view.findViewById(R.id.add_btn);
+            final Button editBtn = (Button) view.findViewById(R.id.edit_btn);
+            final Button deleteBtn = (Button) view.findViewById(R.id.delete_btn);
+            final Button addBtn = (Button) view.findViewById(R.id.add_btn);
 
             editBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
+                    editBtn.startAnimation(myAnim);
                     MFalla selFalla = listFallas.get(position);
 
                     Log.i("MyActivity", "Selected Note: " + selFalla.getId_falla());
-                  /*  Intent explicit_intent = new Intent(MainActivity.this, GuardarEditarActaActivity.class);
-                    explicit_intent.putExtra("Acta", selActa);
-                    MainActivity.this.startActivity(explicit_intent);*/
+                    Intent explicit_intent = new Intent(MainActivity.this, EditarReporte.class);
+                    explicit_intent.putExtra("Acta", selFalla);
+                    MainActivity.this.startActivity(explicit_intent);
+//                    MainActivity.this.startActivity(explicit_intent);
 
                 }
             });
 
+     /*       deleteBtn.setOnTouchListener(new View.OnTouchListener() {
+
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN: {
+                            v.getBackground().setColorFilter(0xe0f47521, PorterDuff.Mode.SRC_ATOP);
+                            v.invalidate();
+                            break;
+                        }
+                        case MotionEvent.ACTION_UP: {
+                            v.getBackground().clearColorFilter();
+                            v.invalidate();
+                            break;
+                        }
+                    }
+                    return false;
+                }
+            });*/
+
             deleteBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                   /* v.startAnimation(buttonClick);*/
+
+                    deleteBtn.startAnimation(myAnim);
+
                     //do something
                     // list.remove(position); //or some other task
                     //notifyDataSetChanged();
-          /*          delActa = mAllActas.get(position);
+                    delRepFalla = listFallas.get(position);
+                    Log.d("ITEM DELETE","Item id:" + delRepFalla.getId_falla());
                     AlertDialog.Builder dialogo1 = new AlertDialog.Builder(MainActivity.this);
                     dialogo1.setTitle("Importante");
-                    dialogo1.setMessage("¿Se eliminará el registro, desea realizar esta acción?");
+                    dialogo1.setIcon(R.drawable.alert);
+                    dialogo1.setMessage("¿Se eliminará el registro de forma permanente, desea realizar esta acción?");
                     dialogo1.setCancelable(false);
                     dialogo1.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialogo1, int id) {
                             //flagEliminar = true;
                             if (mDbHelper != null) {
-
                                 //Borramos la nota de la base de datos
-                                mDbHelper.deleteNote(delActa);
+                                mDbHelper.deleteReporteFalla(delRepFalla);
                                 //Refrescamos la lista de notas
                                 resfreshNotes();
-
                                 //Devolvemos true para evitar que se ejecute el OnItemClickListener
                             }
                         }
@@ -290,12 +328,14 @@ public class MainActivity extends AppCompatActivity
                             dialogo1.dismiss();
                         }
                     });
-                    dialogo1.show();*/
+                    dialogo1.show();
                 }
             });
             addBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    addBtn.startAnimation(myAnim);
                    /* if (InternetConnection.checkConnection(mContext)) {
                         *//******************Retrofit***************//*
                         uploadActa = mAllActas.get(position);

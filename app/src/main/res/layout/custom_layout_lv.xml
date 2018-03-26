@@ -1,70 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="200dp"
-android:orientation="vertical">
-
-<TableLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:weightSum="30">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/list_item_string"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="15"
-            android:paddingLeft="8dp"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <ImageButton
-            android:id="@+id/edit_btn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="5"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:shadowRadius="10"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="5dp"
-            android:background="@color/editar"
-            android:src="@drawable/edit"
-           />
-
-        <ImageButton
-            android:id="@+id/delete_btn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="5"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="5dp"
-            android:background="@color/eliminar"
-            android:src="@drawable/delete"/>
-
-        <Button
-            android:id="@+id/add_btn"
-            android:layout_width="0dp"
+        <TableRow
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="5"
-            style="@style/ButtonCloud"
-            android:background="@drawable/cloud_upload"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            />
+            android:weightSum="36">
+
+            <TextView
+                android:id="@+id/list_item_string"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="24"
+                android:paddingLeft="8dp"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/edit_btn"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="4"
+                android:background="@drawable/buttonedit"
+                android:shadowRadius="10" />
+
+            <Button
+                android:id="@+id/delete_btn"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="4"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/buttondelete"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"/>
+
+            <Button
+                android:id="@+id/add_btn"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="4"
+                android:background="@drawable/buttonsubir"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp" />
 
 
-    </TableRow>
-</TableLayout>
+        </TableRow>
+    </TableLayout>
 
 </LinearLayout>

@@ -36,6 +36,24 @@ public class FallasDBHelper extends SQLiteOpenHelper {
                 MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
                 MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
                 MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (1,'REPORTE 1','16-03-2018','16:14','TRANSALTISA')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (2,'REPORTE 2','16-03-2018','16:14','TRANSALTISA')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (3,'REPORTE 3','16-03-2018','16:14','TRANSALTISA')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (4,'REPORTE 4','16-03-2018','16:14','TRANSALTISA')");
     }
 
     @Override
@@ -190,7 +208,7 @@ public class FallasDBHelper extends SQLiteOpenHelper {
     }
 
     //Actualizar los datos en una nota
-    public int updateActa(MFalla falla) {
+    public int updateReporteFalla(MFalla falla) {
 
         // 1. Obtenemos una reference de la BD con permisos de escritura
         SQLiteDatabase db = this.getWritableDatabase();
@@ -225,7 +243,7 @@ public class FallasDBHelper extends SQLiteOpenHelper {
     }
 
     // Borrar una Nota
-    public void deleteNote(MFalla falla) {
+    public void deleteReporteFalla(MFalla falla) {
 
         // 1. Obtenemos una reference de la BD con permisos de escritura
         SQLiteDatabase db = this.getWritableDatabase();
