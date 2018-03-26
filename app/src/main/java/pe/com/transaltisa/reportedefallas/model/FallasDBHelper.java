@@ -42,18 +42,6 @@ public class FallasDBHelper extends SQLiteOpenHelper {
                 MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
                 MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
                 MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (2,'REPORTE 2','16-03-2018','16:14','TRANSALTISA')");
-        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
-                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
-                MFallasDBDef.MFALLAS.TITULO_COL+"," +
-                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
-                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
-                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (3,'REPORTE 3','16-03-2018','16:14','TRANSALTISA')");
-        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
-                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
-                MFallasDBDef.MFALLAS.TITULO_COL+"," +
-                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
-                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
-                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (4,'REPORTE 4','16-03-2018','16:14','TRANSALTISA')");
     }
 
     @Override

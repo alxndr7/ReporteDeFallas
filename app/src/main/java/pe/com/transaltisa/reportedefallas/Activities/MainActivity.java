@@ -1,5 +1,6 @@
 package pe.com.transaltisa.reportedefallas.Activities;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -32,15 +33,25 @@ import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import pe.com.transaltisa.reportedefallas.R;
+import pe.com.transaltisa.reportedefallas.api.ApiService;
+import pe.com.transaltisa.reportedefallas.api.RetroClient;
+import pe.com.transaltisa.reportedefallas.api.response.Prueba;
+import pe.com.transaltisa.reportedefallas.api.response.Result;
 import pe.com.transaltisa.reportedefallas.model.FallasDBHelper;
 import pe.com.transaltisa.reportedefallas.model.MFalla;
 import pe.com.transaltisa.reportedefallas.model.MFallasDBDef;
 import pe.com.transaltisa.reportedefallas.utils.SessionManager;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -51,7 +62,7 @@ public class MainActivity extends AppCompatActivity
     private List<MFalla> listFallas;
     private ArrayList<String> mlistTitlesFallas;
     private MyCustomAdapter adapter;
-    private MFalla delRepFalla;
+    private MFalla delRepFalla, uploadRepFalla;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -336,6 +347,10 @@ public class MainActivity extends AppCompatActivity
                 public void onClick(View v) {
 
                     addBtn.startAnimation(myAnim);
+
+                    uploadRepFalla = listFallas.get(position);
+
+                    subir_reporte(uploadRepFalla);
                    /* if (InternetConnection.checkConnection(mContext)) {
                         *//******************Retrofit***************//*
                         uploadActa = mAllActas.get(position);
@@ -347,6 +362,44 @@ public class MainActivity extends AppCompatActivity
 
             return view;
         }
+    }
+
+    private void subir_reporte(MFalla obj) {
+
+        final ProgressDialog progressDialog;
+        progressDialog = new ProgressDialog(MainActivity.this);
+        progressDialog.setMessage("Subiendo información...");
+        progressDialog.show();
+
+        listFallas = mDbHelper.getAllFallos();
+        ApiService service = RetroClient.getApiService();
+        Call<Result> resultCall = service.pruebajson(obj.getTitulo(),obj.getEmpresa(),obj.getFecha_falla() + " " + obj.getHora_falla()+ ":00", obj.getConvoy(),obj.getPlaca_tracto(),
+                obj.getPlaca_carreta(),obj.getKilometraje(),obj.getUbicacion(),obj.getDescripcion_falla());
+
+        resultCall.enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                progressDialog.dismiss();
+                Log.i("FOR RESPONSE", new Gson().toJson(response));
+                if (response.isSuccessful()) {
+                    Log.d("RESPONSE JSON", "BODY:" + response.body());
+                    Toast.makeText(getBaseContext(), "Se Subió correctamente el reporte...", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Log.i("RESPONSE", "RESPONSE NOT SUCCESSFUL");
+                    Toast.makeText(getBaseContext(), "Hubo un error al conectarse con el servidor...", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+                progressDialog.dismiss();
+                Log.i("RESPONSE", t.getMessage());
+                Toast.makeText(getBaseContext(), "Tiempo de espera agotado, asegúrese de estar conectado a una red apropiada.", Toast.LENGTH_LONG).show();
+            }
+        });
+
+
     }
 
 }
