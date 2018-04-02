@@ -37,6 +37,8 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -49,6 +51,7 @@ import pe.com.transaltisa.reportedefallas.api.response.Result;
 import pe.com.transaltisa.reportedefallas.model.FallasDBHelper;
 import pe.com.transaltisa.reportedefallas.model.MFalla;
 import pe.com.transaltisa.reportedefallas.model.MFallasDBDef;
+import pe.com.transaltisa.reportedefallas.utils.MyService;
 import pe.com.transaltisa.reportedefallas.utils.SessionManager;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -65,11 +68,14 @@ public class MainActivity extends AppCompatActivity
     private MyCustomAdapter adapter;
     private MFalla delRepFalla, uploadRepFalla;
     private String id_usuario = "0";
+    private TextView nombre_usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        startService(new Intent(getBaseContext(), MyService.class));
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         session = new SessionManager(getApplicationContext());
@@ -79,6 +85,7 @@ public class MainActivity extends AppCompatActivity
         HashMap<String, String> user = session.getUserDetails();
         String name = user.get(SessionManager.KEY_NAME);
         String email = user.get(SessionManager.KEY_EMAIL);
+        //nombre_usuario.setText(name);
 
         id_usuario = user.get(SessionManager.ID_INSPECTOR);
         Log.i("LOGIN", name + email + " " + id_usuario );
@@ -100,7 +107,10 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
+        View header=navigationView.getHeaderView(0);
+/*View view=navigationView.inflateHeaderView(R.layout.nav_header_main);*/
+        nombre_usuario = (TextView) header.findViewById(R.id.nombre_usuario);
+        nombre_usuario.setText("HOLA " + name);
 
         mDbHelper = new FallasDBHelper(this);
         preaparListView();
@@ -114,7 +124,6 @@ public class MainActivity extends AppCompatActivity
         //Do your code here
     }
 
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -122,6 +131,7 @@ public class MainActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+            this.finish();
         }
     }
 
@@ -140,9 +150,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+      /*  if (id == R.id.action_settings) {
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
@@ -153,11 +163,12 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.cloud_sync) {
+      /*  if (id == R.id.cloud_sync) {
             sincronizar_todo();
             // Handle the camera action
-        } else if (id == R.id.logout) {
+        } else */if (id == R.id.logout) {
             session.logoutUser();
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -356,7 +367,17 @@ public class MainActivity extends AppCompatActivity
 
                     uploadRepFalla = listFallas.get(position);
 
-                    subir_reporte(uploadRepFalla);
+                    //subir_reporte(uploadRepFalla);
+
+                    if (mDbHelper != null) {
+                        //Borramos la nota de la base de datos
+                        mDbHelper.updateEstadoEnvioReporte(uploadRepFalla);
+                        mDbHelper.updateEstadoReporte(uploadRepFalla);
+                        //Refrescamos la lista de notas
+                        resfreshNotes();
+                        //Devolvemos true para evitar que se ejecute el OnItemClickListener
+                    }
+
                    /* if (InternetConnection.checkConnection(mContext)) {
                         *//******************Retrofit***************//*
                         uploadActa = mAllActas.get(position);

@@ -31,17 +31,101 @@ public class FallasDBHelper extends SQLiteOpenHelper {
                 MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
                 MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
                 MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
-                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (1,'Nombre Completo Usuario 1','administrador','@dm1n15tr4d0r')");
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (1,'Administrador TI','administrador','@dm1n15tr4d0r')");
+/*
         db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " (" +
                 MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
                 MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
                 MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
-                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (10,'Nombre Completo Usuario 2','user','user')");
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (1084,'ENRIQUE','eencalada','eencalada')");
         db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " (" +
                 MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
                 MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
                 MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
-                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (11,'Nombre Completo Usuario 3','user2','user2')");
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (1187,'JULIO','jbenavides','jbenavides')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " (" +
+                MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (1828,'LUIS','lsalinas','lsalinas')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " (" +
+                MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (4624,'ANYELA','aballon','aballon')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " (" +
+                MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (2318,'EDGAR','ebegazo','ebegazo')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " (" +
+                MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (4417,'JORGE','jbejarano','jbejarano')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " (" +
+                MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (4594,'LUIS','lcajamarca','lcajamarca')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " (" +
+                MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (4413,'MIGUEL','mcalderon','mcalderon')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " (" +
+                MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (3951,'LUIS','lchavez','lchavez')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " (" +
+                MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (2079,'CHRISTIAN','lcajamarca','lcajamarca')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " (" +
+                MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (4266,'FRANKO','fgomez','fgomez')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " (" +
+                MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (2079,'CHRISTIAN','lcajamarca','lcajamarca')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " (" +
+                MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (2079,'CHRISTIAN','lcajamarca','lcajamarca')");
+*/
+
+
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (1084,'ENRIQUE','eencalada','eencalada')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (1187,'JULIO','jbenavides','jbenavides')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (1828,'LUIS','lsalinas','lsalinas')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (4624,'ANYELA','aballon','aballon')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (2318,'EDGAR','ebegazo','ebegazo')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (4417,'JORGE','jbejarano','jbejarano')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (4594,'LUIS','lcajamarca','lcajamarca')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (4413,'MIGUEL','mcalderon','mcalderon')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (3951,'LUIS','lchavez','lchavez')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (2079,'CHRISTIAN','ccollado','ccollado')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (4266,'FRANKO','fgomez','fgomez')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (4684,'JOHAN','jmedina','jmedina')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (4139,'IRVIN ','iperochena','iperochena')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (4359,'EFRAIN','eramos','eramos')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (4452,'CARLOS','crodriguez','crodriguez')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (4631,'PATRICIO','prodriguez','prodriguez')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (4490,'HENRY','htorres','htorres')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (3650,'JAVIER','jvicencio','jvicencio')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " ( "+ MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +  MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+","+  MFallasDBDef.MUSUARIO.LOGIN_COL + ","+ MFallasDBDef.MUSUARIO.PASSWORD_COL+ ") VALUES (3309,'EDGAR','eyauri','eyauri')");
+
+
+
+
+
+
 
         db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
                 MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
@@ -50,7 +134,7 @@ public class FallasDBHelper extends SQLiteOpenHelper {
                 MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
                 MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
                 MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
-                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (1,'REPORTE 1','16-03-2018','16:14',1,11,'TRANSALTISA')");
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (1,'REPORTE sync 1','2018-04-02','11:10',1,1084,'TRANSALTISA')");
         db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
                 MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
                 MFallasDBDef.MFALLAS.TITULO_COL+"," +
@@ -58,7 +142,7 @@ public class FallasDBHelper extends SQLiteOpenHelper {
                 MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
                 MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
                 MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
-                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (2,'REPORTE 1','16-03-2018','16:14',1,11,'TRANSALTISA')");
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (2,'REPORTE sync 2','2018-04-02','11:15',1,1084,'TRANSALTISA')");
         db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
                 MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
                 MFallasDBDef.MFALLAS.TITULO_COL+"," +
@@ -66,13 +150,15 @@ public class FallasDBHelper extends SQLiteOpenHelper {
                 MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
                 MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
                 MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
-                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (3,'REPORTE 1','16-03-2018','16:14',1,10,'TRANSALTISA')");
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (3,'REPORTE 1','16-03-2018','16:14',1,1187,'TRANSALTISA')");
         db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
                 MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
                 MFallasDBDef.MFALLAS.TITULO_COL+"," +
                 MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
                 MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
-                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (4,'REPORTE 2','16-03-2018','16:14','TRANSALTISA')");
+                MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (4,'REPORTE 2','16-03-2018','16:14',1,1187,'TRANSALTISA')");
 
         Log.d("ONCREATE","ONCREATE HELPER");
     }
@@ -127,7 +213,6 @@ public class FallasDBHelper extends SQLiteOpenHelper {
         values.put(MFallasDBDef.MFALLAS.DESCRIPCION_FALLA_COL, falla.getDescripcion_falla());
         values.put(MFallasDBDef.MFALLAS.ID_USUARIO_COL, falla.getId_usuario());
         values.put(MFallasDBDef.MFALLAS.ESTADO_COL, falla.getId_usuario());
-
 
         // 3. Insertamos los datos en la tabla "notes"
         db.insert(MFallasDBDef.MFALLAS.TABLE_NAME, null, values);
@@ -251,6 +336,80 @@ public class FallasDBHelper extends SQLiteOpenHelper {
         return listFallas;
     }
 
+    public List<MFalla> getAllReportesPorEnviar() {
+        //Instanciamos un Array para llenarlo con todos los objetos Notes que saquemos de la BD
+        List<MFalla> listFallas = new ArrayList<MFalla>();
+        String query;
+        query = "SELECT  * FROM " + MFallasDBDef.MFALLAS.TABLE_NAME + " WHERE " + MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL + " = 1";
+
+        // 2. Obtenemos una reference de la BD con permisos de escritura y ejecutamos el query
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        // 3. Iteramos entre cada uno de olos registros y agregarlos al array de Notas
+        MFalla falla = null;
+        if (cursor.moveToFirst()) {
+
+            do {
+                falla = new MFalla();
+                falla.setId_falla(Integer.parseInt(cursor.getString(0)));
+                falla.setTitulo(cursor.getString(1));
+                falla.setFecha_falla(cursor.getString(2));
+                falla.setHora_falla(cursor.getString(3));
+                falla.setEmpresa(cursor.getString(4));
+                falla.setConvoy(cursor.getString(5));
+                falla.setPlaca_tracto(cursor.getString(6));
+                falla.setPlaca_carreta(cursor.getString(7));
+                falla.setKilometraje(cursor.getString(8));
+                falla.setUbicacion(cursor.getString(9));
+                falla.setDescripcion_falla(cursor.getString(10));
+                falla.setId_usuario(cursor.getString(11));
+                falla.setEstado(cursor.getString(12));
+                // Add book to books
+                listFallas.add(falla);
+                Log.i("MyActivity", " 3 helper " );
+            } while (cursor.moveToNext());
+
+            Log.i("MyActivity", " 4 helper " );
+        }
+
+        //Cerramos el cursor
+        cursor.close();
+
+        // Devolvemos las notas encontradas o un array vacio en caso de que no se encuentre nada
+        return listFallas;
+    }
+
+    public Integer getCountReportesPorEnviar() {
+        //Instanciamos un Array para llenarlo con todos los objetos Notes que saquemos de la BD
+        Integer countRepPorEnv = 0;
+        String query;
+        query = "SELECT  count(*) FROM " + MFallasDBDef.MFALLAS.TABLE_NAME + " WHERE " + MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL + " = 1";
+
+        // 2. Obtenemos una reference de la BD con permisos de escritura y ejecutamos el query
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+
+        // 3. Iteramos entre cada uno de olos registros y agregarlos al array de Notas
+        MFalla falla = null;
+        if (cursor.moveToFirst()) {
+            do {
+                falla = new MFalla();
+                countRepPorEnv = Integer.parseInt(cursor.getString(0));
+
+            } while (cursor.moveToNext());
+
+            Log.i("MyActivity", " 4 helper " );
+        }
+
+        //Cerramos el cursor
+        cursor.close();
+
+        // Devolvemos las notas encontradas o un array vacio en caso de que no se encuentre nada
+        return countRepPorEnv;
+    }
+
     //Actualizar los datos en una nota
     public int updateReporteFalla(MFalla falla) {
 
@@ -326,6 +485,81 @@ public class FallasDBHelper extends SQLiteOpenHelper {
         return i;
     }
 
+    public int setEstadoEnviado(MFalla falla) {
+
+        // 1. Obtenemos una reference de la BD con permisos de escritura
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // 2. Creamos el objeto ContentValues con las claves "columna"/valor
+        // que se desean actualizar
+        ContentValues values = new ContentValues();
+
+        values.put(MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL, "0");
+
+        // 3. Actualizamos el registro con el método update el cual devuelve la cantidad
+        // de registros actualizados
+        int i = db.update(MFallasDBDef.MFALLAS.TABLE_NAME, //table
+                values, // column/value
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+" = ?", // selections
+                new String[] { String.valueOf(falla.getId_falla()) }); //selection args
+
+        // 4. Cerramos la conexión a la BD
+        db.close();
+
+        // Devolvemos la cantidad de registros actualizados
+        return i;
+    }
+
+
+    public int updateEstadoEnvioReporte(MFalla falla) {
+
+        // 1. Obtenemos una reference de la BD con permisos de escritura
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // 2. Creamos el objeto ContentValues con las claves "columna"/valor
+        // que se desean actualizar
+        ContentValues values = new ContentValues();
+
+        values.put(MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL, "1");
+
+        // 3. Actualizamos el registro con el método update el cual devuelve la cantidad
+        // de registros actualizados
+        int i = db.update(MFallasDBDef.MFALLAS.TABLE_NAME, //table
+                values, // column/value
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+" = ?", // selections
+                new String[] { String.valueOf(falla.getId_falla()) }); //selection args
+
+        // 4. Cerramos la conexión a la BD
+        db.close();
+
+        // Devolvemos la cantidad de registros actualizados
+        return i;
+    }
+
+    public int updateEstadoReporteEnviado(MFalla falla) {
+
+        // 1. Obtenemos una reference de la BD con permisos de escritura
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // 2. Creamos el objeto ContentValues con las claves "columna"/valor
+        // que se desean actualizar
+        ContentValues values = new ContentValues();
+
+        values.put(MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL, "0");
+
+        // 3. Actualizamos el registro con el método update el cual devuelve la cantidad
+        // de registros actualizados
+        int i = db.update(MFallasDBDef.MFALLAS.TABLE_NAME, //table
+                values, // column/value
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+" = ?", // selections
+                new String[] { String.valueOf(falla.getId_falla()) }); //selection args
+
+        // 4. Cerramos la conexión a la BD
+        db.close();
+
+        // Devolvemos la cantidad de registros actualizados
+        return i;
+    }
 
     public Usuario validarLogin(String l, String p){
 

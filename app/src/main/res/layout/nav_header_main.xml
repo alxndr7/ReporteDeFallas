@@ -25,11 +25,15 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="T.I. Transaltisa"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="soporte@transaltisa.com.pe" />
+    <TextView
+        android:id="@+id/nombre_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 </LinearLayout>

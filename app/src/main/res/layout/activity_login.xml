@@ -33,7 +33,7 @@
                 android:inputType="text"
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff"
-                android:text="administrador"
+                android:text=""
                 android:hint="Usuario" />
         </android.support.design.widget.TextInputLayout>
 
@@ -50,7 +50,7 @@
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff"
                 android:hint="Contraseña"
-                android:text="@dm1n15tr4d0r"/>
+                android:text=""/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatButton
