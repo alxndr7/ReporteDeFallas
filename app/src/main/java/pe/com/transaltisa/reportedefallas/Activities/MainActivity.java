@@ -284,7 +284,36 @@ public class MainActivity extends AppCompatActivity
             final Button editBtn = (Button) view.findViewById(R.id.edit_btn);
             final Button deleteBtn = (Button) view.findViewById(R.id.delete_btn);
             final Button addBtn = (Button) view.findViewById(R.id.add_btn);
+            final Button sharedBtn = (Button) view.findViewById(R.id.compart_btn);
 
+            sharedBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    /*EditText content = (EditText) findViewById(R.id.editText1);
+                    String shareBody = content.getText().toString();*/
+                    sharedBtn.startAnimation(myAnim);
+                    MFalla sharedFalla = listFallas.get(position);
+                    String textoCompartido = "Reporte de Falla\n" +
+                            "\nTitulo: " + sharedFalla.getTitulo() +
+                            "\nFecha: " + sharedFalla.getFecha_falla() +
+                            "\nHora: " + sharedFalla.getHora_falla() +
+                            "\nEmpresa: " + sharedFalla.getEmpresa() +
+                            "\nConvoy: " + sharedFalla.getConvoy() +
+                            "\nPlaca Tracto: " + sharedFalla.getPlaca_tracto() +
+                            "\nPlaca Carreta: " + sharedFalla.getPlaca_carreta() +
+                            "\nKilometraje: " + sharedFalla.getKilometraje() +
+                            "\nUbicacion: " + sharedFalla.getUbicacion() +
+                            "\nDescripción:" + sharedFalla.getDescripcion_falla()
+                            ;
+
+                    Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                    sharingIntent.setType("text/plain");
+                    sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "\n\n");
+                    sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, textoCompartido);
+                    startActivity(Intent.createChooser(sharingIntent,  "Enviado mensaje"));
+                    
+                }
+            });
             editBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
