@@ -33,6 +33,7 @@
                 android:inputType="text"
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff"
+                android:text="administrador"
                 android:hint="Usuario" />
         </android.support.design.widget.TextInputLayout>
 
@@ -48,7 +49,8 @@
                 android:inputType="textPassword"
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff"
-                android:hint="Contraseña"/>
+                android:hint="Contraseña"
+                android:text="@dm1n15tr4d0r"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatButton

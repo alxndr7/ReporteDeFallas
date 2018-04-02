@@ -27,5 +27,6 @@ public interface ApiService {
                                   @Field("reporteFecha") String reporteFecha,
                                   @Field("convoy") String convoy,@Field("placaTracto") String placaTracto,
                                   @Field("placaCarreta") String placaCarreta,@Field("kilometraje") String kilometraje,
-                                  @Field("ubicacion") String ubicacion,@Field("descFalla") String descFalla);
+                                  @Field("ubicacion") String ubicacion,@Field("descFalla") String descFalla,
+                                    @Field("idUsuario") int idUsuario);
 }

@@ -5,9 +5,9 @@ package pe.com.transaltisa.reportedefallas.model;
  */
 public class MFallasDBDef {
     //Nombre del esquema de Base de Datos
-    public static final String DATABASE_NAME = "trn_fallas";
+    public static final String DATABASE_NAME = "trn_fallas2";
     //Version de la Base de Datos (Este parámetro es importante  )
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 4;
 
     public static class MFALLAS {
         //Nombre de la tabla
@@ -24,6 +24,8 @@ public class MFallasDBDef {
         public static final String KILOMETRAJE_COL= "kilometraje";
         public static final String UBICACION_COL= "ubicacion";
         public static final String DESCRIPCION_FALLA_COL= "descripcion_falla";
+        public static final String ID_USUARIO_COL = "id_usuario";
+        public static final String ESTADO_COL = "estado";
     }
 
     public static class MUSUARIO {
@@ -49,7 +51,9 @@ public class MFallasDBDef {
                     MFALLAS.PLACA_CARRETA_COL + " TEXT, " +
                     MFALLAS.KILOMETRAJE_COL + " TEXT, " +
                     MFALLAS.UBICACION_COL + " TEXT, " +
-                    MFALLAS.DESCRIPCION_FALLA_COL + " TEXT);";
+                    MFALLAS.DESCRIPCION_FALLA_COL + " TEXT, " +
+                    MFALLAS.ID_USUARIO_COL + " INTEGER, " +
+                    MFALLAS.ESTADO_COL + " INTEGER);";
 
     public static final String MUSUARIO_TABLE_CREATE =
             "CREATE TABLE " + MUSUARIO.TABLE_NAME + " (" +

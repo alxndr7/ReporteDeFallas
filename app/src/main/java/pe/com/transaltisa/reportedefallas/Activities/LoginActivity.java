@@ -21,9 +21,9 @@ import pe.com.transaltisa.reportedefallas.utils.SessionManager;
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
-    private FallasDBHelper mDbHelper;
     SessionManager session;
     AlertDialogManager alert = new AlertDialogManager();
+    private FallasDBHelper mDbHelper;
 
     @BindView(R.id.edtxtUsuario)
     EditText _usuario;
@@ -38,7 +38,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-
         // Session Manager
         session = new SessionManager(getApplicationContext());
         mDbHelper = new FallasDBHelper(this);
@@ -122,7 +121,6 @@ public class LoginActivity extends AppCompatActivity {
         // Staring MainActivity
         Intent i = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(i);
-
         finish();
     }
 
@@ -145,8 +143,8 @@ public class LoginActivity extends AppCompatActivity {
             _usuario.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            _password.setError("Entre 4 y 10 caracteres alfanuméricos");
+        if (password.isEmpty() || password.length() < 4 || password.length() > 15) {
+            _password.setError("Entre 4 y 15 caracteres alfanuméricos");
             valid = false;
         } else {
             _password.setError(null);

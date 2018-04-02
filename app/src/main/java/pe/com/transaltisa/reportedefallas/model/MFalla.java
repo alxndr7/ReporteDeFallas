@@ -18,11 +18,14 @@ public class MFalla implements Serializable {
     private String kilometraje;
     private String ubicacion;
     private String descripcion_falla;
+    private String id_usuario;
+    private String estado;
 
     public MFalla(){
     }
 
-    public MFalla( String titulo, String fecha_falla, String hora_falla, String empresa, String convoy, String placa_tracto, String placa_carreta, String kilometraje, String ubicacion, String descripcion_falla) {
+    public MFalla(int id_falla, String titulo, String fecha_falla, String hora_falla, String empresa, String convoy, String placa_tracto, String placa_carreta, String kilometraje, String ubicacion, String descripcion_falla, String id_usuario, String estado) {
+        this.id_falla = id_falla;
         this.titulo = titulo;
         this.fecha_falla = fecha_falla;
         this.hora_falla = hora_falla;
@@ -33,6 +36,8 @@ public class MFalla implements Serializable {
         this.kilometraje = kilometraje;
         this.ubicacion = ubicacion;
         this.descripcion_falla = descripcion_falla;
+        this.id_usuario = id_usuario;
+        this.estado = estado;
     }
 
     public int getId_falla() {
@@ -121,5 +126,21 @@ public class MFalla implements Serializable {
 
     public void setDescripcion_falla(String descripcion_falla) {
         this.descripcion_falla = descripcion_falla;
+    }
+
+    public String getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(String id_usuario) {
+        this.id_usuario = id_usuario;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }

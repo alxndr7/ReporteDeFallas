@@ -23,29 +23,69 @@ public class FallasDBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Creamos las tablas en la Base de datos
+        Log.d("ONCREATE","ONCREATE HELPER 1");
+
         db.execSQL(MFallasDBDef.MFALLAS_TABLE_CREATE);
         db.execSQL(MFallasDBDef.MUSUARIO_TABLE_CREATE);
         db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " (" +
                 MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
                 MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
                 MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
-                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (5,'Nombre Completo Usuario 1','admin','admin')");
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (1,'Nombre Completo Usuario 1','administrador','@dm1n15tr4d0r')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " (" +
+                MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (10,'Nombre Completo Usuario 2','user','user')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MUSUARIO.TABLE_NAME + " (" +
+                MFallasDBDef.MUSUARIO.ID_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.NOMBRE_USUARIO_COL+"," +
+                MFallasDBDef.MUSUARIO.LOGIN_COL + "," +
+                MFallasDBDef.MUSUARIO.PASSWORD_COL+ " ) VALUES (11,'Nombre Completo Usuario 3','user2','user2')");
+
         db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
                 MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
                 MFallasDBDef.MFALLAS.TITULO_COL+"," +
                 MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
                 MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
-                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (1,'REPORTE 1','16-03-2018','16:14','TRANSALTISA')");
+                MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (1,'REPORTE 1','16-03-2018','16:14',1,11,'TRANSALTISA')");
         db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
                 MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
                 MFallasDBDef.MFALLAS.TITULO_COL+"," +
                 MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
                 MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
-                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (2,'REPORTE 2','16-03-2018','16:14','TRANSALTISA')");
+                MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (2,'REPORTE 1','16-03-2018','16:14',1,11,'TRANSALTISA')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (3,'REPORTE 1','16-03-2018','16:14',1,10,'TRANSALTISA')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (4,'REPORTE 2','16-03-2018','16:14','TRANSALTISA')");
+
+        Log.d("ONCREATE","ONCREATE HELPER");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    /*    if (oldVersion < 4){
+            Log.d("UPGRADE", "OLDVERSION");
+            db.execSQL("ALTER TABLE "+ MFallasDBDef.MFALLAS.TABLE_NAME +" ADD "+ MFallasDBDef.MFALLAS.ID_USUARIO_COL +" INTEGER");
+            db.execSQL("ALTER TABLE "+ MFallasDBDef.MFALLAS.TABLE_NAME +" ADD "+ MFallasDBDef.MFALLAS.ESTADO_COL +" INTEGER");
+        }*/
+
 
         //El método onUpgrade se ejecuta cada vez que recompilamos e instalamos la app con un
         //nuevo numero de version de base de datos (DATABASE_VERSION), de tal mamera que en este
@@ -85,6 +125,8 @@ public class FallasDBHelper extends SQLiteOpenHelper {
         values.put(MFallasDBDef.MFALLAS.KILOMETRAJE_COL, falla.getKilometraje());
         values.put(MFallasDBDef.MFALLAS.UBICACION_COL, falla.getUbicacion());
         values.put(MFallasDBDef.MFALLAS.DESCRIPCION_FALLA_COL, falla.getDescripcion_falla());
+        values.put(MFallasDBDef.MFALLAS.ID_USUARIO_COL, falla.getId_usuario());
+        values.put(MFallasDBDef.MFALLAS.ESTADO_COL, falla.getId_usuario());
 
 
         // 3. Insertamos los datos en la tabla "notes"
@@ -114,7 +156,9 @@ public class FallasDBHelper extends SQLiteOpenHelper {
                 MFallasDBDef.MFALLAS.PLACA_CARRETA_COL,
                 MFallasDBDef.MFALLAS.KILOMETRAJE_COL,
                 MFallasDBDef.MFALLAS.UBICACION_COL,
-                MFallasDBDef.MFALLAS.DESCRIPCION_FALLA_COL
+                MFallasDBDef.MFALLAS.DESCRIPCION_FALLA_COL,
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL,
+                MFallasDBDef.MFALLAS.ESTADO_COL
         };
 
         // 2. Contruimos el query
@@ -145,6 +189,8 @@ public class FallasDBHelper extends SQLiteOpenHelper {
             falla.setKilometraje(cursor.getString(8));
             falla.setUbicacion(cursor.getString(9));
             falla.setDescripcion_falla(cursor.getString(10));
+            falla.setId_usuario(cursor.getString(11));
+            falla.setEstado(cursor.getString(12));
         }
 
         // 5. Devolvemos le objeto Inscampo
@@ -152,12 +198,20 @@ public class FallasDBHelper extends SQLiteOpenHelper {
     }
 
     // Obtener todas las notas
-    public List<MFalla> getAllFallos() {
+    public List<MFalla> getAllFallos(String id_usuario) {
         //Instanciamos un Array para llenarlo con todos los objetos Notes que saquemos de la BD
         List<MFalla> listFallas = new ArrayList<MFalla>();
+        Log.d("GETFALLOS","ID=" + id_usuario);
+        String query;
+        String id_admin = "1";
+        if(id_usuario.equals(id_admin)){
+            // 1. Aramos un String con el query a ejecutar
+            query = "SELECT  * FROM " + MFallasDBDef.MFALLAS.TABLE_NAME ;
+        }
+        else{
+            query = "SELECT  * FROM " + MFallasDBDef.MFALLAS.TABLE_NAME + " WHERE "+ MFallasDBDef.MFALLAS.ID_USUARIO_COL + " = " + id_usuario + " AND " + MFallasDBDef.MFALLAS.ESTADO_COL + " = 1";
+        }
 
-        // 1. Aramos un String con el query a ejecutar
-        String query = "SELECT  * FROM " + MFallasDBDef.MFALLAS.TABLE_NAME ;
 
         // 2. Obtenemos una reference de la BD con permisos de escritura y ejecutamos el query
         SQLiteDatabase db = this.getWritableDatabase();
@@ -180,6 +234,8 @@ public class FallasDBHelper extends SQLiteOpenHelper {
                 falla.setKilometraje(cursor.getString(8));
                 falla.setUbicacion(cursor.getString(9));
                 falla.setDescripcion_falla(cursor.getString(10));
+                falla.setId_usuario(cursor.getString(11));
+                falla.setEstado(cursor.getString(12));
                 // Add book to books
                 listFallas.add(falla);
                 Log.i("MyActivity", " 3 helper " );
@@ -244,6 +300,32 @@ public class FallasDBHelper extends SQLiteOpenHelper {
         // 3. Cerramos la conexión a la Bd
         db.close();
     }
+
+    public int updateEstadoReporte(MFalla falla) {
+
+        // 1. Obtenemos una reference de la BD con permisos de escritura
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // 2. Creamos el objeto ContentValues con las claves "columna"/valor
+        // que se desean actualizar
+        ContentValues values = new ContentValues();
+
+        values.put(MFallasDBDef.MFALLAS.ESTADO_COL, "0");
+
+        // 3. Actualizamos el registro con el método update el cual devuelve la cantidad
+        // de registros actualizados
+        int i = db.update(MFallasDBDef.MFALLAS.TABLE_NAME, //table
+                values, // column/value
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+" = ?", // selections
+                new String[] { String.valueOf(falla.getId_falla()) }); //selection args
+
+        // 4. Cerramos la conexión a la BD
+        db.close();
+
+        // Devolvemos la cantidad de registros actualizados
+        return i;
+    }
+
 
     public Usuario validarLogin(String l, String p){
 
