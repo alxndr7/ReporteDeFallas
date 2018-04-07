@@ -33,6 +33,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".Activities.HistorialActivity"
+            android:label="@string/title_activity_historial"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity android:name=".Activities.NuevoReporte"
             android:label="@string/title_activity_nuevo"/>
         <activity android:name=".Activities.EditarReporte"

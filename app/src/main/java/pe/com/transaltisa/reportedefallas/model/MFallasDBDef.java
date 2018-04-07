@@ -17,7 +17,9 @@ public class MFallasDBDef {
         public static final String TITULO_COL = "titulo";
         public static final String FECHA_FALLA_COL = "fecha_falla";
         public static final String HORA_FALLA_COL = "hora_falla";
+        public static final String RUTA_COL= "ruta";
         public static final String EMPRESA_COL = "empresa";
+        public static final String FLOTA_COL = "flota";
         public static final String CONVOY_COL= "convoy";
         public static final String PLACA_TRACTO_COL= "placa_tracto";
         public static final String PLACA_CARRETA_COL= "placa_carreta";
@@ -46,7 +48,9 @@ public class MFallasDBDef {
                     MFALLAS.TITULO_COL + " TEXT, " +
                     MFALLAS.FECHA_FALLA_COL + " TEXT, " +
                     MFALLAS.HORA_FALLA_COL + " TEXT, " +
+                    MFALLAS.RUTA_COL + " TEXT, " +
                     MFALLAS.EMPRESA_COL + " TEXT, " +
+                    MFALLAS.FLOTA_COL + " TEXT, " +
                     MFALLAS.CONVOY_COL + " TEXT, " +
                     MFALLAS.PLACA_TRACTO_COL + " TEXT, " +
                     MFALLAS.PLACA_CARRETA_COL + " TEXT, " +

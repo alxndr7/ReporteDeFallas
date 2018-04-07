@@ -11,18 +11,18 @@
 
     </group>-->
 
-    <!--<item android:title="Communicate">
+    <item android:title="Opciones">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
+                android:id="@+id/reportes_sin_enviar"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="Reportes sin enviar" />
+            <item
+                android:id="@+id/historial_Reportes"
+                android:icon="@drawable/historial"
+                android:title="Reportes Enviados" />
         </menu>
-    </item>-->
+    </item>
 
     <item android:title="Cerrar Sesión">
         <menu>

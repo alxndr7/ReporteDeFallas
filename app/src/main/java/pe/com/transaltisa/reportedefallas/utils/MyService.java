@@ -134,6 +134,7 @@ public class MyService extends Service {
 
         for(int i =0; i<listaSync.size();i++) {
             final MFalla fobj = listaSync.get(i);
+            Log.d("SYNC",fobj.toString());
             Call<Result> resultCall = service.pruebajson(fobj.getTitulo(), fobj.getEmpresa(), fobj.getFecha_falla() + " " + fobj.getHora_falla() + ":00", fobj.getConvoy(), fobj.getPlaca_tracto(),
                     fobj.getPlaca_carreta(), fobj.getKilometraje(), fobj.getUbicacion(), fobj.getDescripcion_falla(),Integer.parseInt(fobj.getId_usuario()));
 

@@ -135,14 +135,30 @@
                     <TableRow
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:weightSum="10">
+                        android:weightSum="12">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="6">
+
+                            <pe.com.transaltisa.reportedefallas.utils.InstantAutoComplete
+                                android:id="@+id/autoRutas"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:completionThreshold="0"
+                                android:hint="Ruta:"/>
+
+                        </android.support.design.widget.TextInputLayout>
                         <!--  Email Label -->
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="0dp"
                             android:layout_height="fill_parent"
                             android:layout_marginBottom="8dp"
                             android:layout_marginTop="8dp"
-                            android:layout_weight="5"
+                            android:layout_weight="3"
                             android:backgroundTint="#00FF00">
 
                             <EditText
@@ -158,7 +174,7 @@
                             android:layout_height="fill_parent"
                             android:layout_marginBottom="8dp"
                             android:layout_marginTop="8dp"
-                            android:layout_weight="5"
+                            android:layout_weight="3"
                             android:backgroundTint="#00FF00">
 
                             <EditText
@@ -166,6 +182,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Hora:"
+                                android:editable="false"
                                 android:inputType="text" />
                         </android.support.design.widget.TextInputLayout>
                     </TableRow>
@@ -199,14 +216,14 @@
                     <TableRow
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:weightSum="10">
+                        android:weightSum="9">
                         <!--  Email Label -->
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="0dp"
                             android:layout_height="fill_parent"
                             android:layout_marginBottom="8dp"
                             android:layout_marginTop="8dp"
-                            android:layout_weight="5">
+                            android:layout_weight="3">
 
                             <EditText
                                 android:id="@+id/edtxtEmpresa"
@@ -222,14 +239,36 @@
                             android:layout_height="fill_parent"
                             android:layout_marginBottom="8dp"
                             android:layout_marginTop="8dp"
-                            android:layout_weight="5">
+                            android:layout_weight="3">
+
+                            <!--<EditText
+                                android:id="@+id/autoFlota"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Flota:"
+                                android:inputType="text" />-->
+                            <pe.com.transaltisa.reportedefallas.utils.InstantAutoComplete
+                                android:id="@+id/autoFlotas"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:completionThreshold="0"
+                                android:hint="Flota:"/>
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="3">
 
                             <EditText
                                 android:id="@+id/edtxtConvoy"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Convoy:"
-                                android:inputType="text" />
+                                android:inputType="number" />
                         </android.support.design.widget.TextInputLayout>
                     </TableRow>
 
@@ -246,12 +285,20 @@
                             android:layout_marginTop="8dp"
                             android:layout_weight="3">
 
-                            <EditText
+                          <!--  <EditText
                                 android:id="@+id/edtxtPlacaTracto"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Placa Tracto:"
-                                android:inputType="text" />
+                                android:inputType="text" />-->
+                            <pe.com.transaltisa.reportedefallas.utils.InstantAutoComplete
+                                android:id="@+id/autoTractos"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:completionThreshold="0"
+                                android:maxLength="7"
+                                android:hint="Tracto:"/>
+
                         </android.support.design.widget.TextInputLayout>
 
                         <android.support.design.widget.TextInputLayout
@@ -261,12 +308,19 @@
                             android:layout_marginTop="8dp"
                             android:layout_weight="3">
 
-                            <EditText
+                         <!--   <EditText
                                 android:id="@+id/edtxtPlacaCarreta"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Placa Carreta:"
-                                android:inputType="text" />
+                                android:inputType="text" />-->
+                            <pe.com.transaltisa.reportedefallas.utils.InstantAutoComplete
+                                android:id="@+id/autoCarretas"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:completionThreshold="0"
+                                android:maxLength="7"
+                                android:hint="Carreta:"/>
                         </android.support.design.widget.TextInputLayout>
 
                         <android.support.design.widget.TextInputLayout
@@ -281,7 +335,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Kilometraje:"
-                                android:inputType="text" />
+                                android:inputType="number" />
                         </android.support.design.widget.TextInputLayout>
 
                     </TableRow>
@@ -323,12 +377,19 @@
                             android:layout_marginTop="8dp"
                             android:layout_weight="9">
 
-                            <EditText
+                           <!-- <EditText
                                 android:id="@+id/edtxtUbicacion"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Ubicación:"
-                                android:inputType="text" />
+                                android:inputType="text" />-->
+                            <pe.com.transaltisa.reportedefallas.utils.InstantAutoComplete
+                                android:id="@+id/autoUbicacion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:completionThreshold="0"
+                                android:hint="Ubicación:"/>
+
                         </android.support.design.widget.TextInputLayout>
 
                     </TableRow>

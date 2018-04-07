@@ -150,7 +150,8 @@ public class FallasDBHelper extends SQLiteOpenHelper {
                 MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
                 MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
                 MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
-                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (3,'REPORTE 1','16-03-2018','16:14',1,1187,'TRANSALTISA')");
+                MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (3,'REPORTE 3','16-03-2018','16:14',1,1187,'0','TRANSALTISA')");
         db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
                 MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
                 MFallasDBDef.MFALLAS.TITULO_COL+"," +
@@ -158,7 +159,122 @@ public class FallasDBHelper extends SQLiteOpenHelper {
                 MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
                 MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
                 MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
-                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (4,'REPORTE 2','16-03-2018','16:14',1,1187,'TRANSALTISA')");
+                MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (4,'REPORTE 4','16-03-2018','16:14',1,1187,'0','TRANSALTISA')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
+                MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (5,'REPORTE 5','16-03-2018','16:14',1,1187,'0','TRANSALTISA')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
+                MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (6,'REPORTE 6','16-03-2018','16:14',1,1187,'0','TRANSALTISA')");
+
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
+                MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (7,'REPORTE 7','16-03-2018','16:14',1,1187,'0','TRANSALTISA')");
+
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
+                MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (8,'REPORTE 8','16-03-2018','16:14',1,1187,'0','TRANSALTISA')");
+
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
+                MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (9,'REPORTE 9','16-03-2018','16:14',1,1187,'0','TRANSALTISA')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
+                MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (10,'REPORTE 10','16-03-2018','16:14',1,1187,'0','TRANSALTISA')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
+                MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (11,'REPORTE 11','16-03-2018','16:14',1,1187,'0','TRANSALTISA')");
+
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
+                MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (12,'REPORTE 12','16-03-2018','16:14',1,1187,'0','TRANSALTISA')");
+
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
+                MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (13,'REPORTE 13','16-03-2018','16:14',1,1187,'0','TRANSALTISA')");
+
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
+                MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (14,'REPORTE 14','16-03-2018','16:14',1,1187,'1','TRANSALTISA')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
+                MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (15,'REPORTE 15','16-03-2018','16:14',1,1187,'1','TRANSALTISA')");
+        db.execSQL("INSERT INTO " + MFallasDBDef.MFALLAS.TABLE_NAME + " (" +
+                MFallasDBDef.MFALLAS.ID_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.TITULO_COL+"," +
+                MFallasDBDef.MFALLAS.FECHA_FALLA_COL+"," +
+                MFallasDBDef.MFALLAS.HORA_FALLA_COL + "," +
+                MFallasDBDef.MFALLAS.ESTADO_COL+ "," +
+                MFallasDBDef.MFALLAS.ID_USUARIO_COL+ "," +
+                MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL+ "," +
+                MFallasDBDef.MFALLAS.EMPRESA_COL+ " ) VALUES (16,'REPORTE 16','16-03-2018','16:14',1,1187,'0','TRANSALTISA')");
 
         Log.d("ONCREATE","ONCREATE HELPER");
     }
@@ -192,7 +308,7 @@ public class FallasDBHelper extends SQLiteOpenHelper {
     * la base de datos (BD)
     * */
 
-    public void insertFallo(MFalla falla){
+    public void insertReporte(MFalla falla){
         //Con este método insertamos las notas nuevas que el usuario vaya creando
 
         // 1. Obtenemos una reference de la BD con permisos de escritura
@@ -204,7 +320,9 @@ public class FallasDBHelper extends SQLiteOpenHelper {
         values.put(MFallasDBDef.MFALLAS.TITULO_COL, falla.getTitulo());
         values.put(MFallasDBDef.MFALLAS.FECHA_FALLA_COL, falla.getFecha_falla());
         values.put(MFallasDBDef.MFALLAS.HORA_FALLA_COL, falla.getHora_falla());
+        values.put(MFallasDBDef.MFALLAS.RUTA_COL, falla.getRuta());
         values.put(MFallasDBDef.MFALLAS.EMPRESA_COL, falla.getEmpresa());
+        values.put(MFallasDBDef.MFALLAS.FLOTA_COL, falla.getFlota());
         values.put(MFallasDBDef.MFALLAS.CONVOY_COL, falla.getConvoy());
         values.put(MFallasDBDef.MFALLAS.PLACA_TRACTO_COL, falla.getPlaca_tracto());
         values.put(MFallasDBDef.MFALLAS.PLACA_CARRETA_COL, falla.getPlaca_carreta());
@@ -212,7 +330,8 @@ public class FallasDBHelper extends SQLiteOpenHelper {
         values.put(MFallasDBDef.MFALLAS.UBICACION_COL, falla.getUbicacion());
         values.put(MFallasDBDef.MFALLAS.DESCRIPCION_FALLA_COL, falla.getDescripcion_falla());
         values.put(MFallasDBDef.MFALLAS.ID_USUARIO_COL, falla.getId_usuario());
-        values.put(MFallasDBDef.MFALLAS.ESTADO_COL, falla.getId_usuario());
+        values.put(MFallasDBDef.MFALLAS.ESTADO_COL, falla.getEstado());
+        values.put(MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL, falla.getEstado_envio());
 
         // 3. Insertamos los datos en la tabla "notes"
         db.insert(MFallasDBDef.MFALLAS.TABLE_NAME, null, values);
@@ -222,7 +341,7 @@ public class FallasDBHelper extends SQLiteOpenHelper {
     }
 
     //Obtener uan Nota dado un ID
-    public MFalla getFallaPorId(int id){
+    public MFalla getReportePorId(int id){
         // Declaramos un objeto Inscampo para instanciarlo con el resultado del query
         MFalla falla= null;
 
@@ -235,7 +354,9 @@ public class FallasDBHelper extends SQLiteOpenHelper {
                 MFallasDBDef.MFALLAS.TITULO_COL,
                 MFallasDBDef.MFALLAS.FECHA_FALLA_COL,
                 MFallasDBDef.MFALLAS.HORA_FALLA_COL,
+                MFallasDBDef.MFALLAS.RUTA_COL,
                 MFallasDBDef.MFALLAS.EMPRESA_COL,
+                MFallasDBDef.MFALLAS.FLOTA_COL,
                 MFallasDBDef.MFALLAS.CONVOY_COL,
                 MFallasDBDef.MFALLAS.PLACA_TRACTO_COL,
                 MFallasDBDef.MFALLAS.PLACA_CARRETA_COL,
@@ -267,15 +388,17 @@ public class FallasDBHelper extends SQLiteOpenHelper {
             falla.setTitulo(cursor.getString(1));
             falla.setFecha_falla(cursor.getString(2));
             falla.setHora_falla(cursor.getString(3));
-            falla.setEmpresa(cursor.getString(4));
-            falla.setConvoy(cursor.getString(5));
-            falla.setPlaca_tracto(cursor.getString(6));
-            falla.setPlaca_carreta(cursor.getString(7));
-            falla.setKilometraje(cursor.getString(8));
-            falla.setUbicacion(cursor.getString(9));
-            falla.setDescripcion_falla(cursor.getString(10));
-            falla.setId_usuario(cursor.getString(11));
-            falla.setEstado(cursor.getString(12));
+            falla.setRuta(cursor.getString(4));
+            falla.setEmpresa(cursor.getString(5));
+            falla.setFlota(cursor.getString(6));
+            falla.setConvoy(cursor.getString(7));
+            falla.setPlaca_tracto(cursor.getString(8));
+            falla.setPlaca_carreta(cursor.getString(9));
+            falla.setKilometraje(cursor.getString(10));
+            falla.setUbicacion(cursor.getString(11));
+            falla.setDescripcion_falla(cursor.getString(12));
+            falla.setId_usuario(cursor.getString(13));
+            falla.setEstado(cursor.getString(14));
         }
 
         // 5. Devolvemos le objeto Inscampo
@@ -283,7 +406,7 @@ public class FallasDBHelper extends SQLiteOpenHelper {
     }
 
     // Obtener todas las notas
-    public List<MFalla> getAllFallos(String id_usuario) {
+    public List<MFalla> getAllReportes(String id_usuario) {
         //Instanciamos un Array para llenarlo con todos los objetos Notes que saquemos de la BD
         List<MFalla> listFallas = new ArrayList<MFalla>();
         Log.d("GETFALLOS","ID=" + id_usuario);
@@ -294,7 +417,7 @@ public class FallasDBHelper extends SQLiteOpenHelper {
             query = "SELECT  * FROM " + MFallasDBDef.MFALLAS.TABLE_NAME ;
         }
         else{
-            query = "SELECT  * FROM " + MFallasDBDef.MFALLAS.TABLE_NAME + " WHERE "+ MFallasDBDef.MFALLAS.ID_USUARIO_COL + " = " + id_usuario + " AND " + MFallasDBDef.MFALLAS.ESTADO_COL + " = 1";
+            query = "SELECT  * FROM " + MFallasDBDef.MFALLAS.TABLE_NAME + " WHERE "+ MFallasDBDef.MFALLAS.ID_USUARIO_COL + " = " + id_usuario + " AND " + MFallasDBDef.MFALLAS.ESTADO_COL + " = 1" + " AND " + MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL + " = 0";
         }
 
 
@@ -312,15 +435,18 @@ public class FallasDBHelper extends SQLiteOpenHelper {
                 falla.setTitulo(cursor.getString(1));
                 falla.setFecha_falla(cursor.getString(2));
                 falla.setHora_falla(cursor.getString(3));
-                falla.setEmpresa(cursor.getString(4));
-                falla.setConvoy(cursor.getString(5));
-                falla.setPlaca_tracto(cursor.getString(6));
-                falla.setPlaca_carreta(cursor.getString(7));
-                falla.setKilometraje(cursor.getString(8));
-                falla.setUbicacion(cursor.getString(9));
-                falla.setDescripcion_falla(cursor.getString(10));
-                falla.setId_usuario(cursor.getString(11));
-                falla.setEstado(cursor.getString(12));
+                falla.setRuta(cursor.getString(4));
+                falla.setEmpresa(cursor.getString(5));
+                falla.setFlota(cursor.getString(6));
+                falla.setConvoy(cursor.getString(7));
+                falla.setPlaca_tracto(cursor.getString(8));
+                falla.setPlaca_carreta(cursor.getString(9));
+                falla.setKilometraje(cursor.getString(10));
+                falla.setUbicacion(cursor.getString(11));
+                falla.setDescripcion_falla(cursor.getString(12));
+                falla.setId_usuario(cursor.getString(13));
+                falla.setEstado(cursor.getString(14));
+                falla.setEstado_envio(cursor.getString(15));
                 // Add book to books
                 listFallas.add(falla);
                 Log.i("MyActivity", " 3 helper " );
@@ -335,6 +461,63 @@ public class FallasDBHelper extends SQLiteOpenHelper {
         // Devolvemos las notas encontradas o un array vacio en caso de que no se encuentre nada
         return listFallas;
     }
+
+    public List<MFalla> getAllReportesEnv(String id_usuario) {
+        //Instanciamos un Array para llenarlo con todos los objetos Notes que saquemos de la BD
+        List<MFalla> listFallas = new ArrayList<MFalla>();
+        Log.d("GETFALLOS","ID=" + id_usuario);
+        String query;
+        String id_admin = "1";
+        if(id_usuario.equals(id_admin)){
+            // 1. Aramos un String con el query a ejecutar
+            query = "SELECT  * FROM " + MFallasDBDef.MFALLAS.TABLE_NAME ;
+        }
+        else{
+            query = "SELECT  * FROM " + MFallasDBDef.MFALLAS.TABLE_NAME + " WHERE "+ MFallasDBDef.MFALLAS.ID_USUARIO_COL + " = " + id_usuario + " AND " + MFallasDBDef.MFALLAS.ESTADO_COL + " = 1" + " AND " + MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL + " = 1";
+        }
+
+
+        // 2. Obtenemos una reference de la BD con permisos de escritura y ejecutamos el query
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        // 3. Iteramos entre cada uno de olos registros y agregarlos al array de Notas
+        MFalla falla = null;
+        if (cursor.moveToFirst()) {
+
+            do {
+                falla = new MFalla();
+                falla.setId_falla(Integer.parseInt(cursor.getString(0)));
+                falla.setTitulo(cursor.getString(1));
+                falla.setFecha_falla(cursor.getString(2));
+                falla.setHora_falla(cursor.getString(3));
+                falla.setRuta(cursor.getString(4));
+                falla.setEmpresa(cursor.getString(5));
+                falla.setFlota(cursor.getString(6));
+                falla.setConvoy(cursor.getString(7));
+                falla.setPlaca_tracto(cursor.getString(8));
+                falla.setPlaca_carreta(cursor.getString(9));
+                falla.setKilometraje(cursor.getString(10));
+                falla.setUbicacion(cursor.getString(11));
+                falla.setDescripcion_falla(cursor.getString(12));
+                falla.setId_usuario(cursor.getString(13));
+                falla.setEstado(cursor.getString(14));
+                falla.setEstado_envio(cursor.getString(15));
+                // Add book to books
+                listFallas.add(falla);
+                Log.i("MyActivity", " 3 helper " );
+            } while (cursor.moveToNext());
+
+            Log.i("MyActivity", " 4 helper " );
+        }
+
+        //Cerramos el cursor
+        cursor.close();
+
+        // Devolvemos las notas encontradas o un array vacio en caso de que no se encuentre nada
+        return listFallas;
+    }
+
 
     public List<MFalla> getAllReportesPorEnviar() {
         //Instanciamos un Array para llenarlo con todos los objetos Notes que saquemos de la BD
@@ -356,15 +539,17 @@ public class FallasDBHelper extends SQLiteOpenHelper {
                 falla.setTitulo(cursor.getString(1));
                 falla.setFecha_falla(cursor.getString(2));
                 falla.setHora_falla(cursor.getString(3));
-                falla.setEmpresa(cursor.getString(4));
-                falla.setConvoy(cursor.getString(5));
-                falla.setPlaca_tracto(cursor.getString(6));
-                falla.setPlaca_carreta(cursor.getString(7));
-                falla.setKilometraje(cursor.getString(8));
-                falla.setUbicacion(cursor.getString(9));
-                falla.setDescripcion_falla(cursor.getString(10));
-                falla.setId_usuario(cursor.getString(11));
-                falla.setEstado(cursor.getString(12));
+                falla.setRuta(cursor.getString(4));
+                falla.setEmpresa(cursor.getString(5));
+                falla.setFlota(cursor.getString(6));
+                falla.setConvoy(cursor.getString(7));
+                falla.setPlaca_tracto(cursor.getString(8));
+                falla.setPlaca_carreta(cursor.getString(9));
+                falla.setKilometraje(cursor.getString(10));
+                falla.setUbicacion(cursor.getString(11));
+                falla.setDescripcion_falla(cursor.getString(12));
+                falla.setId_usuario(cursor.getString(13));
+                falla.setEstado(cursor.getString(14));
                 // Add book to books
                 listFallas.add(falla);
                 Log.i("MyActivity", " 3 helper " );
@@ -423,7 +608,9 @@ public class FallasDBHelper extends SQLiteOpenHelper {
         values.put(MFallasDBDef.MFALLAS.TITULO_COL, falla.getTitulo());
         values.put(MFallasDBDef.MFALLAS.FECHA_FALLA_COL, falla.getFecha_falla());
         values.put(MFallasDBDef.MFALLAS.HORA_FALLA_COL, falla.getHora_falla());
+        values.put(MFallasDBDef.MFALLAS.RUTA_COL, falla.getRuta());
         values.put(MFallasDBDef.MFALLAS.EMPRESA_COL, falla.getEmpresa());
+        values.put(MFallasDBDef.MFALLAS.FLOTA_COL, falla.getFlota());
         values.put(MFallasDBDef.MFALLAS.CONVOY_COL, falla.getConvoy());
         values.put(MFallasDBDef.MFALLAS.PLACA_TRACTO_COL, falla.getPlaca_tracto());
         values.put(MFallasDBDef.MFALLAS.PLACA_CARRETA_COL, falla.getPlaca_carreta());
@@ -494,7 +681,7 @@ public class FallasDBHelper extends SQLiteOpenHelper {
         // que se desean actualizar
         ContentValues values = new ContentValues();
 
-        values.put(MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL, "0");
+        values.put(MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL, "2");
 
         // 3. Actualizamos el registro con el método update el cual devuelve la cantidad
         // de registros actualizados

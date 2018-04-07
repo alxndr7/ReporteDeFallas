@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -17,9 +18,11 @@ import android.widget.Toast;
 import java.util.Calendar;
 
 import pe.com.transaltisa.reportedefallas.R;
+import pe.com.transaltisa.reportedefallas.model.Data;
 import pe.com.transaltisa.reportedefallas.model.FallasDBHelper;
 import pe.com.transaltisa.reportedefallas.model.MFalla;
 import pe.com.transaltisa.reportedefallas.utils.AlertDialogManager;
+import pe.com.transaltisa.reportedefallas.utils.InstantAutoComplete;
 
 public class EditarReporte extends AppCompatActivity {
 
@@ -32,14 +35,17 @@ public class EditarReporte extends AppCompatActivity {
     Button btnEditar;
     Integer id_rep;
     final Calendar c = Calendar.getInstance();
-    EditText _reporte_titulo, _fecha, _hora, _empresa, _convoy, _placa_tracto, _placa_carreta, _kilometraje, _ubicacion, _desc_falla;
-    String titulo,fecha, hora, empresa, convoy, placa_tracto, placa_carreta, kilometraje, ubicacion, desc_falla;
+    EditText _reporte_titulo, _fecha, _hora, _empresa, _convoy, _kilometraje, _desc_falla;
+    String titulo,fecha, hora,ruta, empresa, flota, convoy, placa_tracto, placa_carreta, kilometraje, ubicacion, desc_falla;
+    InstantAutoComplete _autoUbicacion, _autoTractos, _autoCarretas, _autoFlotas, _autoRutas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_reporte);
         mDbHelper = new FallasDBHelper(this);
+        Data datos = new Data();
+
       /*  Intent intent=getIntent();
         Bundle extras =intent.getExtras();
         if (extras != null) {//ver si contiene datos
@@ -55,54 +61,16 @@ public class EditarReporte extends AppCompatActivity {
         _hora = (EditText)findViewById(R.id.edtxtHora);
         _empresa = (EditText)findViewById(R.id.edtxtEmpresa);
         _convoy = (EditText)findViewById(R.id.edtxtConvoy);
-        _placa_tracto = (EditText)findViewById(R.id.edtxtPlacaTracto);
-        _placa_carreta = (EditText)findViewById(R.id.edtxtPlacaCarreta);
         _kilometraje = (EditText)findViewById(R.id.edtxtKilometraje);
-        _ubicacion = (EditText)findViewById(R.id.edtxtUbicacion);
         _desc_falla = (EditText)findViewById(R.id.edtxtDescFalla);
+        _autoUbicacion = (InstantAutoComplete) findViewById(R.id.autoUbicacion);
+        _autoCarretas = (InstantAutoComplete) findViewById(R.id.autoCarretas);
+        _autoTractos = (InstantAutoComplete) findViewById(R.id.autoTractos);
+        _autoFlotas = (InstantAutoComplete) findViewById(R.id.autoFlotas);
+        _autoRutas = (InstantAutoComplete) findViewById(R.id.autoRutas);
 
-        date.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // calender class's instance and get current date , month and year from calender
-                int mYear = c.get(Calendar.YEAR); // current year
-                int mMonth = c.get(Calendar.MONTH); // current month
-                int mDay = c.get(Calendar.DAY_OF_MONTH); // current day
-
-                // date picker dialog
-                datePickerDialog = new DatePickerDialog(EditarReporte.this,
-                        new DatePickerDialog.OnDateSetListener() {
-
-                            @Override
-                            public void onDateSet(DatePicker view, int year,
-                                                  int monthOfYear, int dayOfMonth) {
-                                // set day of month , month and year value in the edit text
-                                date.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth );
-                            }
-                        }, mYear, mMonth, mDay);
-                datePickerDialog.show();
-            }
-        });
-
-        txtTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // calender class's instance and get current date , month and year from calender
-                int mhour  = c.get(Calendar.HOUR);
-                int mMin = c.get(Calendar.MINUTE);
-
-                timePickerDialog = new TimePickerDialog(EditarReporte.this,
-                        new TimePickerDialog.OnTimeSetListener() {
-
-                            @Override
-                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                                txtTime.setText(hourOfDay + ":" + minute);
-                            }
-                        }
-                        , mhour, mMin, false);
-                timePickerDialog.show();
-            }
-        });
+        date.setEnabled(false);
+        txtTime.setEnabled(false);
 
         btnEditar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,6 +80,24 @@ public class EditarReporte extends AppCompatActivity {
         });
 
         llenarCampos();
+
+        String[] tramos = datos.getTramos();
+        String[] tractos = datos.getPlacasTracto();
+        String[] carretas = datos.getPlacasCarreta();
+        String[] flotas = datos.getFlotas();
+        String[] rutas = datos.getRutas();
+
+        ArrayAdapter<String> adapterTramos = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, tramos);
+        ArrayAdapter<String> adapterTractos = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, tractos);
+        ArrayAdapter<String> adapterCarretas = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, carretas);
+        ArrayAdapter<String> adapterFlotas = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, flotas);
+        ArrayAdapter<String> adapterRutas = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, rutas);
+
+        _autoUbicacion.setAdapter(adapterTramos);
+        _autoCarretas.setAdapter(adapterCarretas);
+        _autoTractos.setAdapter(adapterTractos);
+        _autoFlotas.setAdapter(adapterFlotas);
+        _autoRutas.setAdapter(adapterRutas);
 
     }
 
@@ -125,12 +111,14 @@ public class EditarReporte extends AppCompatActivity {
             _reporte_titulo.setText(objRepFalla.getTitulo());
             _fecha.setText(objRepFalla.getFecha_falla());
             _hora.setText(objRepFalla.getHora_falla());
+            _autoRutas.setText(objRepFalla.getRuta());
             _empresa.setText(objRepFalla.getEmpresa());
+            _autoFlotas.setText(objRepFalla.getFlota());
             _convoy.setText(objRepFalla.getConvoy());
-            _placa_tracto.setText(objRepFalla.getPlaca_tracto());
-            _placa_carreta.setText(objRepFalla.getPlaca_carreta());
+            _autoTractos.setText(objRepFalla.getPlaca_tracto());
+            _autoCarretas.setText(objRepFalla.getPlaca_carreta());
             _kilometraje.setText(objRepFalla.getKilometraje());
-            _ubicacion.setText(objRepFalla.getUbicacion());
+            _autoUbicacion.setText(objRepFalla.getUbicacion());
             _desc_falla.setText(objRepFalla.getDescripcion_falla());
         }
     }
@@ -168,12 +156,14 @@ public class EditarReporte extends AppCompatActivity {
         titulo = _reporte_titulo.getText().toString();
         fecha = _fecha.getText().toString();
         hora = _hora.getText().toString();
+        ruta = _autoRutas.getText().toString();
         empresa = _empresa.getText().toString();
+        flota = _autoFlotas.getText().toString();
         convoy = _convoy.getText().toString();
-        placa_tracto = _placa_tracto.getText().toString();
-        placa_carreta = _placa_carreta.getText().toString();
+        placa_tracto = _autoTractos.getText().toString();
+        placa_carreta = _autoCarretas.getText().toString();
         kilometraje = _kilometraje.getText().toString();
-        ubicacion = _ubicacion.getText().toString();
+        ubicacion = _autoUbicacion.getText().toString();
         desc_falla = _desc_falla.getText().toString();
 
         if (titulo.isEmpty()) {
@@ -197,12 +187,28 @@ public class EditarReporte extends AppCompatActivity {
             _hora.setError(null);
         }
 
+        if (ruta.isEmpty()) {
+            _autoRutas.setError("Este campo es obligatorio");
+            valid = false;
+        } else {
+            _autoRutas.setError(null);
+        }
+
+
         if (empresa.isEmpty()) {
             _empresa.setError("Este campo es obligatorio");
             valid = false;
         } else {
             _empresa.setError(null);
         }
+
+        if (flota.isEmpty()) {
+            _autoFlotas.setError("Este campo es obligatorio");
+            valid = false;
+        } else {
+            _autoFlotas.setError(null);
+        }
+
 
         if (convoy.isEmpty()) {
             _convoy.setError("Este campo es obligatorio");
@@ -212,17 +218,17 @@ public class EditarReporte extends AppCompatActivity {
         }
 
         if (placa_tracto.isEmpty()) {
-            _placa_tracto.setError("Este campo es obligatorio");
+            _autoTractos.setError("Este campo es obligatorio");
             valid = false;
         } else {
-            _placa_tracto.setError(null);
+            _autoTractos.setError(null);
         }
 
         if (placa_carreta.isEmpty()) {
-            _placa_carreta.setError("Este campo es obligatorio");
+            _autoCarretas.setError("Este campo es obligatorio");
             valid = false;
         } else {
-            _placa_carreta.setError(null);
+            _autoCarretas.setError(null);
         }
 
         if (kilometraje.isEmpty()) {
@@ -233,10 +239,10 @@ public class EditarReporte extends AppCompatActivity {
         }
 
         if (ubicacion.isEmpty()) {
-            _ubicacion.setError("Este campo es obligatorio");
+            _autoUbicacion.setError("Este campo es obligatorio");
             valid = false;
         } else {
-            _ubicacion.setError(null);
+            _autoUbicacion.setError(null);
         }
 
         if (desc_falla.isEmpty()) {
@@ -260,20 +266,25 @@ public class EditarReporte extends AppCompatActivity {
         titulo = _reporte_titulo.getText().toString();
         fecha = _fecha.getText().toString();
         hora = _hora.getText().toString();
+        ruta = _autoRutas.getText().toString();
         empresa = _empresa.getText().toString();
+        flota = _autoFlotas.getText().toString();
         convoy = _convoy.getText().toString();
-        placa_tracto = _placa_tracto.getText().toString();
-        placa_carreta = _placa_carreta.getText().toString();
+        placa_tracto = _autoTractos.getText().toString();
+        placa_carreta = _autoCarretas.getText().toString();
         kilometraje = _kilometraje.getText().toString();
-        ubicacion = _ubicacion.getText().toString();
+        ubicacion = _autoUbicacion.getText().toString();
         desc_falla = _desc_falla.getText().toString();
+
 
         MFalla repFalla = new MFalla();
         repFalla.setId_falla(id_rep);
         repFalla.setTitulo(titulo);
         repFalla.setFecha_falla(fecha);
         repFalla.setHora_falla(hora);
+        repFalla.setRuta(ruta);
         repFalla.setEmpresa(empresa);
+        repFalla.setFlota(flota);
         repFalla.setConvoy(convoy);
         repFalla.setPlaca_tracto(placa_tracto);
         repFalla.setPlaca_carreta(placa_carreta);
