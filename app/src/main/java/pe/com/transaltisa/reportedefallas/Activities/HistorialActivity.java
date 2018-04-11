@@ -82,13 +82,7 @@ public class HistorialActivity extends AppCompatActivity
         Log.i("LOGIN", name + email + " " + id_usuario );
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(HistorialActivity.this, NuevoReporte.class);
-                HistorialActivity.this.startActivity(i);
-            }
-        });
+        fab.hide();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -276,15 +270,16 @@ public class HistorialActivity extends AppCompatActivity
 
             //Handle TextView and display string from your list
             TextView listItemText = (TextView) view.findViewById(R.id.list_item_string);
+            TextView estado = (TextView) view.findViewById(R.id.estado_envio);
             String markEstado= "";
             if(list.get(position).getEstado_envio().equals("1"))
-                    markEstado = "\u2718";
-            if(list.get(position).getEstado_envio().equals("2"))
                     markEstado = "\u2713";
+            if(list.get(position).getEstado_envio().equals("2"))
+                    markEstado = "\u2713\u2713";
 
 
-            listItemText.setText((position+1) + ". " + markEstado + list.get(position).getFecha_falla() + " - "+list.get(position).getTitulo());
-
+            listItemText.setText((position+1) + ". " + list.get(position).getFecha_falla() + " - "+list.get(position).getTitulo());
+            estado.setText(markEstado);
             final Button deleteBtn = (Button) view.findViewById(R.id.delete_btn);
             final Button sharedBtn = (Button) view.findViewById(R.id.compart_btn);
 
@@ -298,9 +293,11 @@ public class HistorialActivity extends AppCompatActivity
                     MFalla sharedFalla = listFallas.get(position);
                     String textoCompartido = "Reporte de Falla\n" +
                             "\nTitulo: " + sharedFalla.getTitulo() +
+                            "\nRuta: " + sharedFalla.getRuta() +
                             "\nFecha: " + sharedFalla.getFecha_falla() +
                             "\nHora: " + sharedFalla.getHora_falla() +
                             "\nEmpresa: " + sharedFalla.getEmpresa() +
+                            "\nFlota: " + sharedFalla.getFlota() +
                             "\nConvoy: " + sharedFalla.getConvoy() +
                             "\nPlaca Tracto: " + sharedFalla.getPlaca_tracto() +
                             "\nPlaca Carreta: " + sharedFalla.getPlaca_carreta() +

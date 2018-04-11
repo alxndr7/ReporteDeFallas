@@ -105,11 +105,12 @@ public class MyService extends Service {
                                     int countRep = mDbHelper.getCountReportesPorEnviar();
                                     Log.i("NETWORK123", "Reportes: " + countRep);
                                     if (countRep > 0)
+                                        Log.i("NETWORK123", "ANTES DE SINCRONIZAR: " + countRep);
                                         sincronizar_todo();
                                 }
 
                             }
-                        }, 0, 10000);
+                        }, 0, 60000);
                         //timer.scheduleAtFixedRate(task, 0, 1500);
                     }
                 }
@@ -135,7 +136,8 @@ public class MyService extends Service {
         for(int i =0; i<listaSync.size();i++) {
             final MFalla fobj = listaSync.get(i);
             Log.d("SYNC",fobj.toString());
-            Call<Result> resultCall = service.pruebajson(fobj.getTitulo(), fobj.getEmpresa(), fobj.getFecha_falla() + " " + fobj.getHora_falla() + ":00", fobj.getConvoy(), fobj.getPlaca_tracto(),
+            Call<Result> resultCall = service.pruebajson(fobj.getTitulo(), fobj.getEmpresa(), fobj.getRuta(), fobj.getFecha_falla() + " " + fobj.getHora_falla() + ":00",
+                    fobj.getFlota(), fobj.getConvoy(), fobj.getPlaca_tracto(),
                     fobj.getPlaca_carreta(), fobj.getKilometraje(), fobj.getUbicacion(), fobj.getDescripcion_falla(),Integer.parseInt(fobj.getId_usuario()));
 
             resultCall.enqueue(new Callback<Result>() {

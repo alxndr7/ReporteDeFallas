@@ -304,18 +304,20 @@ public class MainActivity extends AppCompatActivity
                     MFalla sharedFalla = listFallas.get(position);
                     String textoCompartido = "Reporte de Falla\n" +
                             "\nTitulo: " + sharedFalla.getTitulo() +
+                            "\nRuta: " + sharedFalla.getRuta() +
                             "\nFecha: " + sharedFalla.getFecha_falla() +
                             "\nHora: " + sharedFalla.getHora_falla() +
                             "\nEmpresa: " + sharedFalla.getEmpresa() +
+                            "\nFlota: " + sharedFalla.getFlota() +
                             "\nConvoy: " + sharedFalla.getConvoy() +
                             "\nPlaca Tracto: " + sharedFalla.getPlaca_tracto() +
                             "\nPlaca Carreta: " + sharedFalla.getPlaca_carreta() +
                             "\nKilometraje: " + sharedFalla.getKilometraje() +
                             "\nUbicacion: " + sharedFalla.getUbicacion() +
                             "\nDescripción:" + sharedFalla.getDescripcion_falla() +
-                            "\nEstado:" + sharedFalla.getEstado() +
+                          /*  "\nEstado:" + sharedFalla.getEstado() +
                             "\nEstado Envio:" + sharedFalla.getEstado_envio() +
-                            "\nUsuario:" + sharedFalla.getId_usuario() +
+                            "\nUsuario:" + sharedFalla.getId_usuario() +*/
                             "\n\nTransaltisa S.A"+
                             "\nSomnolencia Anulada, Operación Asegurada."
                             ;
@@ -433,6 +435,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+/*
     private void sincronizar_todo() {
 
         final ProgressDialog progressDialog;
@@ -446,7 +449,11 @@ public class MainActivity extends AppCompatActivity
 
         for(int i =0; i<listaSync.size();i++) {
             final MFalla fobj = listaSync.get(i);
-            Call<Result> resultCall = service.pruebajson(fobj.getTitulo(), fobj.getEmpresa(), fobj.getFecha_falla() + " " + fobj.getHora_falla() + ":00", fobj.getConvoy(), fobj.getPlaca_tracto(),
+            Call<Result> resultCall = service.pruebajson(fobj.getTitulo(),
+                    fobj.getEmpresa(), fobj.getRuta(),
+                    fobj.getFecha_falla() + " " + fobj.getHora_falla() + ":00",
+                    fobj.getFlota(),
+                    fobj.getConvoy(), fobj.getPlaca_tracto(),
                     fobj.getPlaca_carreta(), fobj.getKilometraje(), fobj.getUbicacion(), fobj.getDescripcion_falla(),Integer.parseInt(fobj.getId_usuario()));
 
             resultCall.enqueue(new Callback<Result>() {
@@ -529,5 +536,6 @@ public class MainActivity extends AppCompatActivity
 
 
     }
+*/
 
 }

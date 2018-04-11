@@ -168,7 +168,7 @@ public class NuevoReporte extends AppCompatActivity {
         int mYear = c.get(Calendar.YEAR); // current year
         int mMonth = c.get(Calendar.MONTH); // current month
         int mDay = c.get(Calendar.DAY_OF_MONTH); // current day
-        int mhour  = c.get(Calendar.HOUR);
+        int mhour  = c.get(Calendar.HOUR_OF_DAY);
         int mMin = c.get(Calendar.MINUTE);
 
         date.setText(mYear + "-" + (mMonth + 1) + "-" + mDay );
