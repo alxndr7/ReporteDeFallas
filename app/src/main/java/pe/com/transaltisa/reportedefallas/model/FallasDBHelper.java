@@ -475,6 +475,10 @@ public class FallasDBHelper extends SQLiteOpenHelper {
         values.put(MFallasDBDef.MFALLAS.KILOMETRAJE_COL, falla.getKilometraje());
         values.put(MFallasDBDef.MFALLAS.UBICACION_COL, falla.getUbicacion());
         values.put(MFallasDBDef.MFALLAS.DESCRIPCION_FALLA_COL, falla.getDescripcion_falla());
+        values.put(MFallasDBDef.MFALLAS.NOMBRE_IMAGE1_COL, falla.getNombre_image1());
+        values.put(MFallasDBDef.MFALLAS.IMAGE1_COL, falla.getImage());
+        values.put(MFallasDBDef.MFALLAS.IMAGE2_COL, falla.getImage2());
+        values.put(MFallasDBDef.MFALLAS.IMAGE3_COL, falla.getImage3());
         values.put(MFallasDBDef.MFALLAS.ID_USUARIO_COL, falla.getId_usuario());
         values.put(MFallasDBDef.MFALLAS.ESTADO_COL, falla.getEstado());
         values.put(MFallasDBDef.MFALLAS.ESTADO_ENVIO_COL, falla.getEstado_envio());
@@ -590,9 +594,13 @@ public class FallasDBHelper extends SQLiteOpenHelper {
                 falla.setKilometraje(cursor.getString(10));
                 falla.setUbicacion(cursor.getString(11));
                 falla.setDescripcion_falla(cursor.getString(12));
-                falla.setId_usuario(cursor.getString(13));
-                falla.setEstado(cursor.getString(14));
-                falla.setEstado_envio(cursor.getString(15));
+                falla.setNombre_image1(cursor.getString(13));
+                falla.setImage(cursor.getBlob(14));
+                falla.setImage2(cursor.getBlob(15));
+                falla.setImage3(cursor.getBlob(16));
+                falla.setId_usuario(cursor.getString(17));
+                falla.setEstado(cursor.getString(18));
+                falla.setEstado_envio(cursor.getString(19));
                 // Add book to books
                 listFallas.add(falla);
                 Log.i("MyActivity", " 3 helper " );
@@ -646,9 +654,13 @@ public class FallasDBHelper extends SQLiteOpenHelper {
                 falla.setKilometraje(cursor.getString(10));
                 falla.setUbicacion(cursor.getString(11));
                 falla.setDescripcion_falla(cursor.getString(12));
-                falla.setId_usuario(cursor.getString(13));
-                falla.setEstado(cursor.getString(14));
-                falla.setEstado_envio(cursor.getString(15));
+                falla.setNombre_image1(cursor.getString(13));
+                falla.setImage(cursor.getBlob(14));
+                falla.setImage2(cursor.getBlob(15));
+                falla.setImage3(cursor.getBlob(16));
+                falla.setId_usuario(cursor.getString(17));
+                falla.setEstado(cursor.getString(18));
+                falla.setEstado_envio(cursor.getString(19));
                 // Add book to books
                 listFallas.add(falla);
                 Log.i("MyActivity", " 3 helper " );
@@ -694,8 +706,12 @@ public class FallasDBHelper extends SQLiteOpenHelper {
                 falla.setKilometraje(cursor.getString(10));
                 falla.setUbicacion(cursor.getString(11));
                 falla.setDescripcion_falla(cursor.getString(12));
-                falla.setId_usuario(cursor.getString(13));
-                falla.setEstado(cursor.getString(14));
+                falla.setNombre_image1(cursor.getString(13));
+                falla.setImage(cursor.getBlob(14));
+                falla.setImage2(cursor.getBlob(15));
+                falla.setImage3(cursor.getBlob(16));
+                falla.setId_usuario(cursor.getString(17));
+                falla.setEstado(cursor.getString(18));
                 // Add book to books
                 listFallas.add(falla);
                 Log.i("MyActivity", " 3 helper " );

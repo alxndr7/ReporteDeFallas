@@ -26,6 +26,10 @@ public class MFallasDBDef {
         public static final String KILOMETRAJE_COL= "kilometraje";
         public static final String UBICACION_COL= "ubicacion";
         public static final String DESCRIPCION_FALLA_COL= "descripcion_falla";
+        public static final String NOMBRE_IMAGE1_COL = "nombre_image1";
+        public static final String IMAGE1_COL = "image1";
+        public static final String IMAGE2_COL = "image2";
+        public static final String IMAGE3_COL = "image3";
         public static final String ID_USUARIO_COL = "id_usuario";
         public static final String ESTADO_COL = "estado";
         public static final String ESTADO_ENVIO_COL = "estado_envio";
@@ -57,6 +61,10 @@ public class MFallasDBDef {
                     MFALLAS.KILOMETRAJE_COL + " TEXT, " +
                     MFALLAS.UBICACION_COL + " TEXT, " +
                     MFALLAS.DESCRIPCION_FALLA_COL + " TEXT, " +
+                    MFALLAS.NOMBRE_IMAGE1_COL + " TEXT, " +
+                    MFALLAS.IMAGE1_COL + " BLOB, " +
+                    MFALLAS.IMAGE2_COL + " BLOB, " +
+                    MFALLAS.IMAGE3_COL + " BLOB, " +
                     MFALLAS.ID_USUARIO_COL + " INTEGER, " +
                     MFALLAS.ESTADO_COL + " INTEGER, " +
                     MFALLAS.ESTADO_ENVIO_COL + " INTEGER);";

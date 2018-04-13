@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import pe.com.transaltisa.reportedefallas.model.Data;
 import pe.com.transaltisa.reportedefallas.model.FallasDBHelper;
 import pe.com.transaltisa.reportedefallas.model.MFalla;
 import pe.com.transaltisa.reportedefallas.utils.AlertDialogManager;
+import pe.com.transaltisa.reportedefallas.utils.DbBitmapUtility;
 import pe.com.transaltisa.reportedefallas.utils.InstantAutoComplete;
 
 public class EditarReporte extends AppCompatActivity {
@@ -38,6 +40,8 @@ public class EditarReporte extends AppCompatActivity {
     EditText _reporte_titulo, _fecha, _hora, _empresa, _convoy, _kilometraje, _desc_falla;
     String titulo,fecha, hora,ruta, empresa, flota, convoy, placa_tracto, placa_carreta, kilometraje, ubicacion, desc_falla;
     InstantAutoComplete _autoUbicacion, _autoTractos, _autoCarretas, _autoFlotas, _autoRutas;
+    ImageView imageView1, imageView2, imageView3;
+    DbBitmapUtility imageUtil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +72,10 @@ public class EditarReporte extends AppCompatActivity {
         _autoTractos = (InstantAutoComplete) findViewById(R.id.autoTractos);
         _autoFlotas = (InstantAutoComplete) findViewById(R.id.autoFlotas);
         _autoRutas = (InstantAutoComplete) findViewById(R.id.autoRutas);
+
+        imageView1 = (ImageView) findViewById(R.id.image_1);
+        imageView2 = (ImageView) findViewById(R.id.image_2);
+        imageView3 = (ImageView) findViewById(R.id.image_3);
 
         date.setEnabled(false);
         txtTime.setEnabled(false);
@@ -120,6 +128,14 @@ public class EditarReporte extends AppCompatActivity {
             _kilometraje.setText(objRepFalla.getKilometraje());
             _autoUbicacion.setText(objRepFalla.getUbicacion());
             _desc_falla.setText(objRepFalla.getDescripcion_falla());
+
+            if(objRepFalla.getImage() != null)
+                imageView1.setImageBitmap(imageUtil.getImage(objRepFalla.getImage()));
+            if(objRepFalla.getImage2() != null)
+                imageView2.setImageBitmap(imageUtil.getImage(objRepFalla.getImage2()));
+            if(objRepFalla.getImage3() != null)
+                imageView3.setImageBitmap(imageUtil.getImage(objRepFalla.getImage3()));
+
         }
     }
 

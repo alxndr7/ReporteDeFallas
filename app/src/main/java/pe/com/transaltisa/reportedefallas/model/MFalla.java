@@ -20,6 +20,10 @@ public class MFalla implements Serializable {
     private String kilometraje;
     private String ubicacion;
     private String descripcion_falla;
+    private String nombre_image1;
+    private byte[] image;
+    private byte[] image2;
+    private byte[] image3;
     private String id_usuario;
     private String estado;
     private String estado_envio;
@@ -27,7 +31,7 @@ public class MFalla implements Serializable {
     public MFalla(){
     }
 
-    public MFalla(int id_falla, String titulo, String fecha_falla, String hora_falla, String ruta, String empresa, String flota, String convoy, String placa_tracto, String placa_carreta, String kilometraje, String ubicacion, String descripcion_falla, String id_usuario, String estado, String estado_envio) {
+    public MFalla(int id_falla, String titulo, String fecha_falla, String hora_falla, String ruta, String empresa, String flota, String convoy, String placa_tracto, String placa_carreta, String kilometraje, String ubicacion, String descripcion_falla, String nombre_image1, byte[] image, byte[] image2, byte[] image3, String id_usuario, String estado, String estado_envio) {
         this.id_falla = id_falla;
         this.titulo = titulo;
         this.fecha_falla = fecha_falla;
@@ -41,6 +45,10 @@ public class MFalla implements Serializable {
         this.kilometraje = kilometraje;
         this.ubicacion = ubicacion;
         this.descripcion_falla = descripcion_falla;
+        this.nombre_image1 = nombre_image1;
+        this.image = image;
+        this.image2 = image2;
+        this.image3 = image3;
         this.id_usuario = id_usuario;
         this.estado = estado;
         this.estado_envio = estado_envio;
@@ -172,6 +180,38 @@ public class MFalla implements Serializable {
 
     public void setFlota(String flota) {
         this.flota = flota;
+    }
+
+    public String getNombre_image1() {
+        return nombre_image1;
+    }
+
+    public void setNombre_image1(String nombre_image1) {
+        this.nombre_image1 = nombre_image1;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
+    public byte[] getImage2() {
+        return image2;
+    }
+
+    public void setImage2(byte[] image2) {
+        this.image2 = image2;
+    }
+
+    public byte[] getImage3() {
+        return image3;
+    }
+
+    public void setImage3(byte[] image3) {
+        this.image3 = image3;
     }
 
     @Override

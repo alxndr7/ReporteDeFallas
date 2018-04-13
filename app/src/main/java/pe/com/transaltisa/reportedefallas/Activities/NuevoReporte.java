@@ -4,6 +4,9 @@ import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +19,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -32,12 +36,14 @@ import pe.com.transaltisa.reportedefallas.model.FallasDBHelper;
 import pe.com.transaltisa.reportedefallas.model.MFalla;
 import pe.com.transaltisa.reportedefallas.model.Usuario;
 import pe.com.transaltisa.reportedefallas.utils.AlertDialogManager;
+import pe.com.transaltisa.reportedefallas.utils.DbBitmapUtility;
 import pe.com.transaltisa.reportedefallas.utils.InstantAutoComplete;
 import pe.com.transaltisa.reportedefallas.utils.SessionManager;
 
 public class NuevoReporte extends AppCompatActivity {
 
     private FallasDBHelper mDbHelper;
+    private static final int CAM_REQUEST=1313;
     SessionManager session;
     AlertDialogManager alert = new AlertDialogManager();
     DatePickerDialog datePickerDialog;
@@ -49,6 +55,12 @@ public class NuevoReporte extends AppCompatActivity {
     EditText _reporte_titulo, _fecha, _hora, _empresa, _convoy, _kilometraje, _desc_falla;
     String titulo,fecha, hora, ruta, empresa, flota, convoy, placa_tracto, placa_carreta, kilometraje, ubicacion, desc_falla;
     InstantAutoComplete _autoUbicacion, _autoTractos, _autoCarretas, _autoFlotas, _autoRutas;
+    ImageView imageView1, imageView2, imageView3;
+    byte[] bImage1, bImage2, bImage3;
+    int currentImage = 0;
+    DbBitmapUtility imageUtil;
+
+
    /* @BindView(R.id.edtxtFecha)
     EditText _fecha;
     @BindView(R.id.edtxtHora)
@@ -98,6 +110,14 @@ public class NuevoReporte extends AppCompatActivity {
         _autoTractos = (InstantAutoComplete) findViewById(R.id.autoTractos);
         _autoFlotas = (InstantAutoComplete) findViewById(R.id.autoFlotas);
         _autoRutas = (InstantAutoComplete) findViewById(R.id.autoRutas);
+
+        imageView1 = (ImageView) findViewById(R.id.image_1);
+        imageView2 = (ImageView) findViewById(R.id.image_2);
+        imageView3 = (ImageView) findViewById(R.id.image_3);
+
+        imageView1.setOnClickListener(new btnTakePhotoClicker1());
+        imageView2.setOnClickListener(new btnTakePhotoClicker2());
+        imageView3.setOnClickListener(new btnTakePhotoClicker3());
 
         String[] tramos = datos.getTramos();
         String[] tractos = datos.getPlacasTracto();
@@ -244,6 +264,63 @@ public class NuevoReporte extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == CAM_REQUEST){
+            if(data != null){
+                Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+                if(currentImage == 1){
+                    imageView1.setImageBitmap(bitmap);
+                    bImage1 = imageUtil.getBytes(bitmap);
+                }
+
+                if(currentImage == 2){
+                    imageView2.setImageBitmap(bitmap);
+                    bImage2 = imageUtil.getBytes(bitmap);
+                }
+
+                if(currentImage == 3){
+                    imageView3.setImageBitmap(bitmap);
+                    bImage3 = imageUtil.getBytes(bitmap);
+                }
+
+            }
+        }
+    }
+
+
+    class btnTakePhotoClicker1 implements  Button.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            currentImage = 1;
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent,CAM_REQUEST);
+        }
+    }
+
+    class btnTakePhotoClicker2 implements  Button.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            currentImage = 2;
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent,CAM_REQUEST);
+        }
+    }
+
+    class btnTakePhotoClicker3 implements  Button.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            currentImage = 3;
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent,CAM_REQUEST);
+        }
     }
 
     public void guardar_reporte() {
@@ -413,6 +490,10 @@ public class NuevoReporte extends AppCompatActivity {
         repFalla.setKilometraje(kilometraje);
         repFalla.setUbicacion(ubicacion);
         repFalla.setDescripcion_falla(desc_falla);
+        repFalla.setNombre_image1("image1");
+        repFalla.setImage(bImage1);
+        repFalla.setImage2(bImage2);
+        repFalla.setImage3(bImage3);
         repFalla.setEstado("1");
         repFalla.setEstado_envio("0");
         repFalla.setId_usuario(id_usuario);
