@@ -172,21 +172,7 @@ public class MyService extends Service {
             RequestBody descFalla = RequestBody.create(MediaType.parse("text/plain"),fobj.getDescripcion_falla());
             RequestBody idUsuario = RequestBody.create(MediaType.parse("text/plain"),fobj.getId_usuario());
 
-            File f = new File(this.getCacheDir(), "image1");
-            try {
-                f.createNewFile();
-                FileOutputStream fos = new FileOutputStream(f);
-                fos.write(fobj.getImage());
-                fos.flush();
-                fos.close();
-            } catch(MalformedURLException e) {
-                //Do something with the exception.
-            } catch(IOException e2) {
-                //Do something with the exception.
-            }
-
             MediaType MEDIA_TYPE_PNG = MediaType.parse("image/jpeg");
-
             RequestBody requestBody1 = RequestBody.create(MEDIA_TYPE_PNG, fobj.getImage());
             Log.d(TAG, "requestBody: " + requestBody1.toString());
             RequestBody imageBody = new MultipartBody.Builder()
@@ -194,29 +180,7 @@ public class MyService extends Service {
                     .build();
             Log.d(TAG, "requestBody: " + imageBody.toString());
 
-
-
-        /*    Blob blob = new javax.sql.rowset.serial.SerialBlob(bytes);
-            Blob blob = fobj.getImage();
-            InputStream in = blob.getBinaryStream();
-            OutputStream out = new FileOutputStream(someFile);
-            byte[] buff = new byte[4096];  // how much of the blob to read/write at a time
-            int len = 0;
-
-            while ((len = in.read(buff)) != -1) {
-                out.write(buff, 0, len);
-            }
-*/
-            Log.i("FILE",f.getAbsolutePath() + " - " + f.getName());
-            RequestBody image = RequestBody.create(MediaType.parse("multipart/form-data"), f);
-            //MultipartBody.Part imageBody =  MultipartBody.Part.createFormData("Image", "Fileimage", image);
-            //String imageText = new String(fobj.getImage(),"UTF-8");
-            //RequestBody bodyImage1 = RequestBody.create(MediaType.parse("text/plain"),new String(fobj.getImage()));
-//            MultipartBody.Part bodyImage1 =  MultipartBody.Part.createFormData("imagen1", "imagen1", requestImage1);
             Call<Result> resultCall = service.pruebajson(titulo,empresa,ruta,reporteFecha,flota,convoy,placaTracto,placaCarreta,kilometraje,ubicacion,descFalla,idUsuario,imageBody);
-           /* Call<Result> resultCall = service.pruebajson(fobj.getTitulo(),fobj.getEmpresa(),fobj.getRuta(),fobj.getFecha_falla(),
-                    fobj.getFlota(),fobj.getFlota(),fobj.getPlaca_tracto(),fobj.getPlaca_carreta(),fobj.getKilometraje(),
-                    fobj.getUbicacion(),fobj.getDescripcion_falla(),fobj.getId_usuario());*/
 
             resultCall.enqueue(new Callback<Result>() {
                 @Override
@@ -232,8 +196,6 @@ public class MyService extends Service {
                         if (mDbHelper != null) {
                             //Borramos la nota de la base de datos
                             mDbHelper.setEstadoEnviado(fobj);
-                            //Refrescamos la lista de notas
-                            //Devolvemos true para evitar que se ejecute el OnItemClickListener
                         }
                     } else {
                         switch (response.code()) {
